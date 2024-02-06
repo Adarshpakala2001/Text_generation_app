@@ -1,3 +1,4 @@
+# pylint: disable=no-member
 """
 This is a module-level docstring.
 
@@ -12,6 +13,9 @@ Example:
     my_module.some_function()
     ```
 """
+# pylint: disable=C0116
+# pylint: disable=C0412
+# pylint: disable=C0301
 import logging
 from fastapi import FastAPI
 from pydantic import BaseModel
