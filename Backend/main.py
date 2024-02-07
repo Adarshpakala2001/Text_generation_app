@@ -28,13 +28,17 @@ app = FastAPI()
 logging.basicConfig(level=logging.DEBUG)
 
 # Enable CORS (Cross-Origin Resource Sharing)
+# Allow all origins during development (update this for production)
+origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # Set up OpenAI API key
 openai.api_key = "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"  # Replace with your actual API key
