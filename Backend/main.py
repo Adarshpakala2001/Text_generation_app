@@ -41,7 +41,7 @@ app.add_middleware(
 
 
 # Set up OpenAI API key
-openai.api_key = "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"  # Replace with your actual API key
+openai.api_key = "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"  # Replace with your actual API key
 
 # Debugging statement
 logging.debug("API Key: %s", openai.api_key)
