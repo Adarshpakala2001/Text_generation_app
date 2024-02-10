@@ -1,3 +1,5 @@
+
+# pylint: disable=no-member
 # pylint: disable=no-member
 """
 This is a module-level docstring.
@@ -16,11 +18,16 @@ Example:
 # pylint: disable=C0116
 # pylint: disable=C0412
 # pylint: disable=C0301
+import os
 import logging
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 import openai
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = FastAPI()
 
@@ -39,12 +46,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Set up OpenAI API key using environment variable
+openai.api_key = os.getenv("OPENAI_API_KEY", "")  # Replace with your environment variable name
 
-# Set up OpenAI API key
-openai.api_key = "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"  # Replace with your actual API key
 
 # Debugging statement
-logging.debug("API Key: %s", openai.api_key)
+logging.debug("API Key: %s", "*" * 8)  # Avoid logging the actual API key
 
 # Root route
 @app.get("/")
