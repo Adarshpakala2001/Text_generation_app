@@ -18,6 +18,10 @@ Example:
 # pylint: disable=C0116
 # pylint: disable=C0412
 # pylint: disable=C0301
+# pylint: disable=no-member
+# pylint: disable=C0116
+# pylint: disable=C0412
+# pylint: disable=C0301
 import os
 import logging
 from dotenv import load_dotenv
@@ -48,7 +52,6 @@ app.add_middleware(
 
 # Set up OpenAI API key using environment variable
 openai.api_key = os.getenv("OPENAI_API_KEY", "")  # Replace with your environment variable name
-
 
 # Debugging statement
 logging.debug("API Key: %s", "*" * 8)  # Avoid logging the actual API key
