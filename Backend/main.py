@@ -88,7 +88,7 @@ def generate_text(prompt_obj: TextPrompt) -> dict:
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": prompt_obj.prompt},
             ],
-            max_tokens=500
+            max_tokens=4000
         )
 
         # Logging the OpenAI response
