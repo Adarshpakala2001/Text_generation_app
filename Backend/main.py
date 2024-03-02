@@ -15,6 +15,7 @@ Example:
     my_module.some_function()
     ```
 """
+#hai how are you this is text-generation app using Generative AI
 # pylint: disable=C0116
 # pylint: disable=C0412
 # pylint: disable=C0301
